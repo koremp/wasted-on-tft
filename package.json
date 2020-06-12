@@ -1,0 +1,23 @@
+{
+  "name": "tft_time",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lolchess.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koremp/tft_time.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koremp/tft_time/issues"
+  },
+  "homepage": "https://github.com/koremp/tft_time#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3"
+  }
+}
