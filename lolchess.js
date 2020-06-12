@@ -20,13 +20,10 @@ function getMatchCount(html_list) {
     var match_count_list = [];
 
     for(html in html_list) {
-        const $ = cheerio.load(html.data);
-        const regex = /d+/;
-        
-        const $match_count = $("div.profile__match-history-v2 h4").children("");
-        console.log($match_count);
-
-        match_count_list.push($match_count);
+        const $ = cheerio.load(html);
+        //const regex = /d+/;
+        const $matchCount = $("div profile__match-history-v2");
+        //match_count_list.push($match_count);
     }
 }
 
