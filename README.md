@@ -1,1 +1,3 @@
-# tft_time
+# lolchess-time 
+
+lolchess crawling bot
