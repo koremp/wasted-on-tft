@@ -12,7 +12,8 @@ async function getHTML() {
 
 getHTML()
   .then(html => {
+    console.log(html.data)
     const $ = cheerio.load(html.data);
-    var h4tag = $("div.profile__match-history-v2 h4");
-    console.log(h4tag[0].text())
+    var sth = $("h4").text();
+    console.log(sth);
   })
