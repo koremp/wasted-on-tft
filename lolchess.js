@@ -94,6 +94,7 @@ async function main() {
     }
 
     console.log([secToTimeDelta(s2_time) , secToTimeDelta(s3_time), secToTimeDelta(s3_5_time)]);
+    console.log(secToTimeDelta(s2_time + s3_time + s3_5_time))
 }
 
 main();
