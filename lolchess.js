@@ -1,7 +1,7 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const account = "디킨슨";
+const account = "{username}";
 
 const ROOT_URL = "https://lolchess.gg/profile/kr";
 const SEASONS = ['s2', 's3', 's3.5'];
