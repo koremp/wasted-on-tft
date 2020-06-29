@@ -1,8 +1,6 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-const account = "{username}";
-
 const ROOT_URL = "https://lolchess.gg/profile/kr";
 const SEASONS = ['s2', 's3', 's3.5'];
 
@@ -42,8 +40,8 @@ function getTimespanWithSeconds(seconds) {
     return { days, hours, minutes, seconds };
 }
 
-const getSeasonPlaytime = async (season) => {
-    const url = encodeURI(`${ROOT_URL}/${account}/${season}/matches`);
+const getSeasonPlaytime = async (season, username) => {
+    const url = encodeURI(`${ROOT_URL}/${username}/${season}/matches`);
     const html = await getHtml(url);
     const matchCounts = getMatchCounts(html);
     const matchUrls = matchCounts.map(count => `${url}/all/${count}`);
@@ -55,8 +53,8 @@ const getSeasonPlaytime = async (season) => {
     };
 };
 
-async function getPlaytime() {
-    const seasons = await Promise.all(SEASONS.map(getSeasonPlaytime));
+async function getPlaytime(username) {
+    const seasons = await Promise.all(SEASONS.map((season) => getSeasonPlaytime(season, username)));
     const total = seasons.reduce((x, y) => x + y.time, 0);
     
     return {
@@ -66,4 +64,8 @@ async function getPlaytime() {
     };
 }
 
-getPlaytime().then(res => console.log(JSON.stringify(res, null, 4)));
+username='디킨슨'
+
+getPlaytime(username).then(res => 
+    console.log(JSON.stringify(res, null, 4))
+);
