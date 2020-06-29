@@ -64,7 +64,7 @@ async function getPlaytime(username) {
     };
 }
 
-username='디킨슨'
+const username='디킨슨'
 
 getPlaytime(username).then(res => 
     console.log(JSON.stringify(res, null, 4))
